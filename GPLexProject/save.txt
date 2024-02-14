@@ -1,0 +1,141 @@
+%%
+"#" {
+	return (int)Tok.LINE_BREAK;
+}
+
+"," {
+	return (int)Tok.COMMA;
+}
+
+{ID}  { 
+	return (int)Tok.ID;
+}
+
+{INTNUM} { 
+	LexValueInt = int.Parse(yytext);
+	return (int)Tok.INUM;
+}
+
+"+" {
+	return (int)Tok.PLUS;
+}
+
+"-" {
+	return (int)Tok.MINUS;
+}
+
+"*" {
+	return (int)Tok.MULT;
+}
+
+"/" {
+	return (int)Tok.DIVISION;
+}
+
+"=" { 
+  return (int)Tok.ASSIGN;
+}
+
+set {
+	return (int)Tok.SET;
+}
+
+"|" { 
+	return (int)Tok.STREAM;
+}
+
+"[" { 
+	return (int)Tok.LEFT_SQUARE_BRACKET;
+}
+
+"]" { 
+	return (int)Tok.RIGHT_SQUARE_BRACKET;
+}
+
+"(" { 
+	 return (int)Tok.LEFT_BRACKET;
+}
+
+")" { 
+	return (int)Tok.RIGHT_BRACKET;
+}
+
+if {
+	return (int)Tok.IF;
+}
+
+else {
+	return (int)Tok.ELSE;
+}
+
+while {
+	return (int)Tok.WHILE;
+}
+
+sub {
+	return (int)Tok.SUB;
+}
+
+return {
+	return (int)Tok.RETURN;
+}
+
+end { 
+	return (int)Tok.END;
+}
+
+or { 
+	return (int)Tok.OR;
+}
+
+and { 
+	return (int)Tok.AND;
+}
+
+not { 
+	return (int)Tok.NOT;
+}
+
+"<" { 
+	return (int)Tok.LT;
+}
+
+">" { 
+	return (int)Tok.GT;
+}
+
+"<=" { 
+	return (int)Tok.LEQ;
+}
+
+">=" { 
+	return (int)Tok.GEQ;
+}
+
+"<>" { 
+	return (int)Tok.NEQ;
+}
+
+"@" {
+	return (int)Tok.ADDRESS;
+}
+
+"\"" {
+	return (int)Tok.STRING;
+}
+
+"\'" {
+	return (int)Tok.CHAR;
+}
+
+echo {
+	return (int)Tok.ECHO;
+}
+
+mod {
+	return (int)Tok.MOD;
+}
+
+div {
+	return (int)Tok.DIV;
+}

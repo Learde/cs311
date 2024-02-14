@@ -1,0 +1,11 @@
+~~ one line cmt
+
+<// multi line cmt with some ids
+---------------------
+--------//>
+
+sub Hello # $
+   "Hello, " + @1 + "you are " + @2 + "years old" | echo
+end sub &&&
+
+Hello("Gob", 109)
