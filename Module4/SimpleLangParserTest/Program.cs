@@ -13,7 +13,7 @@ namespace SimpleLangParserTest
         static void Main(string[] args)
         {
             string fileContents = @"
-return Fib(@1 - 1) + Fib(@1 - 2)
+~~return Fib(@1 - 1) + Fib(@1 - 2)
 ~~ comment
 set x = ENV(""PATH"")
 
