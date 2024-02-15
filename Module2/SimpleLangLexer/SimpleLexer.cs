@@ -263,11 +263,33 @@ namespace SimpleLexer
                     break;
                 case '\"':
                     NextCh();
+                    while (currentCh != '\"' && currentCh != 0)
+                    {
+                        NextCh();
+                    }
+
+                    if (currentCh == 0)
+                    {
+                        LexError("Expected \" ");
+                    }
+
+                    NextCh();
+
                     LexKind = Tok.STRING;
                     break;
                 case '\'':
                     NextCh();
+                    NextCh();
+                    if (currentCh != '\'')
+                    {
+                        LexError("Expected ' ");
+                    }
+                    NextCh();
                     LexKind = Tok.CHAR;
+                    break;
+                case ',':
+                    NextCh();
+                    LexKind = Tok.COMMA;
                     break;
                 default:
                     if (char.IsLetter(currentCh))

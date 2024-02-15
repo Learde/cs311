@@ -316,12 +316,10 @@ namespace TestSimpleLexer
             Lexer l = new Lexer(inputReader);
 
             var lexems = TestSimpleLexer.getLexerOutput(l);
-            Assert.IsTrue(lexems.Count == 3);
+            Assert.IsTrue(lexems.Count == 1);
             CollectionAssert.AreEqual(new LexemList()
             {
-                {Tok.STRING, "\""},
-                {Tok.ID, "text"},
-                {Tok.STRING, "\""},
+                {Tok.STRING, "\"text\""},
             }.ToList(), lexems);
         }
 
@@ -333,15 +331,11 @@ namespace TestSimpleLexer
             Lexer l = new Lexer(inputReader);
 
             var lexems = TestSimpleLexer.getLexerOutput(l);
-            Assert.IsTrue(lexems.Count == 6);
+            Assert.IsTrue(lexems.Count == 2);
             CollectionAssert.AreEqual(new LexemList()
             {
-                {Tok.CHAR, "\'"},
-                {Tok.ID, "t"},
-                {Tok.CHAR, "\'"},
-                {Tok.CHAR, "\'"},
-                {Tok.ID, "b"},
-                {Tok.CHAR, "\'"},
+                {Tok.CHAR, "\'t\'"},
+                {Tok.CHAR, "\'b\'"},
             }.ToList(), lexems);
         }
 
