@@ -20,6 +20,7 @@ namespace SimpleLexer
         // eof
         EOF,
         LINE_BREAK,
+        NEW_LINE,
 
         // comma
         COMMA,
@@ -121,7 +122,7 @@ namespace SimpleLexer
 
         private void PassSpaces()
         {
-            while (char.IsWhiteSpace(currentCh))
+            while (char.IsWhiteSpace(currentCh) && currentCh != '\n')
             {
                 NextCh();
             }
@@ -204,6 +205,10 @@ namespace SimpleLexer
 
             switch (currentCh)
             {
+                case '\n':
+                    NextCh();
+                    LexKind = Tok.NEW_LINE;
+                    break;
                 case '~':
                     ProcessOneLineComment();
                     break;

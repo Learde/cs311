@@ -30,11 +30,25 @@ namespace SimpleLangParser
 
         public void OperatorList()
         {
+            PassNewLines();
+
             Operator();
 
-            while (l.LexKind != Tok.EOF && l.LexKind != Tok.END && l.LexKind != Tok.ELSE)
+            if (l.LexKind == Tok.LINE_BREAK)
             {
-                Operator();
+                l.NextLexem();
+            }
+
+            if (!IsNewLine())
+            {
+                SyntaxError("New line expected");
+            }
+
+            l.NextLexem();
+
+            if (!IsEndOfProg())
+            {
+                OperatorList();
             }
         }
 
@@ -43,6 +57,14 @@ namespace SimpleLangParser
             if (l.LexKind == Tok.LINE_BREAK)
             {
                 l.NextLexem();
+                if (l.LexKind == Tok.NEW_LINE)
+                {
+                    l.NextLexem();
+                    Operator();
+                } else
+                {
+                    SyntaxError("New line expected");
+                }
             } else if (l.LexKind == Tok.SET)
             {
                 Assignment();
@@ -58,6 +80,24 @@ namespace SimpleLangParser
             } else
             {
                 SyntaxError("Assign, Sub, Expression or Statement expected");
+            }
+        }
+
+        private bool IsEndOfProg()
+        {
+            return l.LexKind == Tok.EOF || l.LexKind == Tok.END || l.LexKind == Tok.ELSE;
+        }
+
+        private bool IsNewLine()
+        {
+            return l.LexKind == Tok.NEW_LINE;
+        }
+
+        private void PassNewLines()
+        {
+            while (l.LexKind == Tok.NEW_LINE)
+            {
+                l.NextLexem();
             }
         }
 
