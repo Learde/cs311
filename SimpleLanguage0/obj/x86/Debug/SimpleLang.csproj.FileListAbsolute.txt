@@ -1,0 +1,8 @@
+C:\Users\leard\Downloads\SimpleLanguage0\SimpleLanguage0\bin\Debug\SimpleLang.exe.config
+C:\Users\leard\Downloads\SimpleLanguage0\SimpleLanguage0\bin\Debug\SimpleLang.exe
+C:\Users\leard\Downloads\SimpleLanguage0\SimpleLanguage0\bin\Debug\SimpleLang.pdb
+C:\Users\leard\Downloads\SimpleLanguage0\SimpleLanguage0\obj\x86\Debug\SimpleLang.csproj.AssemblyReference.cache
+C:\Users\leard\Downloads\SimpleLanguage0\SimpleLanguage0\obj\x86\Debug\SimpleLang.csproj.SuggestedBindingRedirects.cache
+C:\Users\leard\Downloads\SimpleLanguage0\SimpleLanguage0\obj\x86\Debug\SimpleLang.csproj.CoreCompileInputs.cache
+C:\Users\leard\Downloads\SimpleLanguage0\SimpleLanguage0\obj\x86\Debug\SimpleLang.exe
+C:\Users\leard\Downloads\SimpleLanguage0\SimpleLanguage0\obj\x86\Debug\SimpleLang.pdb
